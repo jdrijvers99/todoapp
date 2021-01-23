@@ -1,0 +1,46 @@
+{% extends "noneLoggedin.html" %}
+{% block title %} Register {% endblock %}
+{% block content %}
+
+
+<div class="container">
+  <h1 style="text-align: center ;">Welcome to the ToDoApp</h1>
+  <p style="text-align: center;">Fill in this form to create a free account.</p>
+  {% if msg %}
+  <div class="alert alert-danger" role="alert">
+    {{msg}}
+  </div>
+  {% else %}
+  <p></p>
+  {% endif %}
+    <form method="POST">
+        <!-- <div class="form-group">
+          <label for="exampleInputEmail1">First Name</label>
+          <input type="text" class="form-control" id="firstName" name="fname">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Last Name</label>
+          <input type="text" class="form-control" id="lastName" name="lname">
+        </div> -->
+        <div class="form-group">
+          <label for="exampleInputEmail1">Username</label>
+          <input type="text" class="form-control" id="username" name="uname">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="text" class="form-control" id="email" name="email">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="password" name="pw">
+          <small id="passwordHelp" class="form-text text-muted">Password must be at least 8 characters</small>
+        </div>
+        <div class="col-md-12 text-center">
+          <button type="submit" value="sumbit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+    <p class="bottom">Already have an account?  <a class="bottom" href="{{url_for('login')}}"> Login here</a></p>
+</div>
+
+
+{% endblock %}

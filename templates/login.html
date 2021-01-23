@@ -1,0 +1,32 @@
+{% extends "noneLoggedin.html" %}
+{% block title %} Login {% endblock %}
+{% block content %}
+
+
+<div class="container">
+  <h1 style="text-align: center ;">Login to the ToDoApp</h1>
+  <p style="text-align: center;">Enter your username and password to login.</p>
+  {% if msg %}
+  <div class="alert alert-danger" role="alert">
+    {{msg}}
+  </div>
+  {% else %}
+  <p></p>
+  {% endif %}
+    <form action =# method="POST">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Username</label>
+          <input type="text" class="form-control" id="username" name="uname">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="password" name="pw">
+        </div>
+        <div class="col-md-12 text-center">
+        <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+      </form>
+</div>
+
+
+{% endblock %}
